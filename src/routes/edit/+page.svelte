@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import global_data from '$stores/data';
+	import { base } from '$app/paths';
 
 	export let data: {
 		fetch?: Fetch;
@@ -17,7 +18,7 @@
 	const change_file = () => {
 		const path = $global_data?.articles?.find((file) => file.name === value)?.path;
 		if (path) {
-			goto(`/edit?file_path=${path}`);
+			goto(`${base}/edit?file_path=${path}`);
 		}
 	};
 </script>

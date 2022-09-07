@@ -20,15 +20,15 @@ const config = {
 
 	kit: {
 		paths: {
-			base: dev ? '' : '/blog',
+			base: dev ? '' : '/blog'
 		},
 		adapter: adapter(),
 		alias: {
-			'$common': './src/common',
-			"$components": './src/components',
-			"$stores": './src/stores'
+			$common: './src/common',
+			$components: './src/components',
+			$stores: './src/stores'
 		}
-	},
+	}
 };
 
 export default config;

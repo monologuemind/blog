@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<style>
+			html,
+			body,
+			#sveltekit-entry {
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+		%sveltekit.head%
+	</head>
 
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-	<meta name="viewport" content="width=device-width" />
-	<style>
-		html,
-		body,
-		#sveltekit-entry {
-			height: 100%;
-			width: 100%;
-		}
-	</style>
-	%sveltekit.head%
-</head>
-
-<body>
-	<div id="sveltekit-entry">%sveltekit.body%</div>
-</body>
-
+	<body>
+		<div id="sveltekit-entry">%sveltekit.body%</div>
+	</body>
 </html>
