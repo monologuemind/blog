@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@codemirror/lang-javascript': ^6.0.2
   '@playwright/test': ^1.25.0
   '@sveltejs/adapter-static': next
   '@sveltejs/kit': next
@@ -32,7 +31,6 @@ specifiers:
   vite: ^3.1.0
 
 dependencies:
-  '@codemirror/lang-javascript': 6.0.2
   codemirror: 6.0.0
   marked: 4.1.0
   octokit: 2.0.7
@@ -82,18 +80,6 @@ packages:
       '@codemirror/state': 6.1.1
       '@codemirror/view': 6.2.2
       '@lezer/common': 1.0.1
-    dev: false
-
-  /@codemirror/lang-javascript/6.0.2:
-    resolution: {integrity: sha512-BZRJ9u/zl16hLkSpDAWm73mrfIR7HJrr0lvnhoSOCQVea5BglguWI/slxexhvUb0CB5cXgKWuo2bM+N9EhIaZw==}
-    dependencies:
-      '@codemirror/autocomplete': 6.1.0
-      '@codemirror/language': 6.2.1
-      '@codemirror/lint': 6.0.0
-      '@codemirror/state': 6.1.1
-      '@codemirror/view': 6.2.2
-      '@lezer/common': 1.0.1
-      '@lezer/javascript': 1.0.2
     dev: false
 
   /@codemirror/language/6.2.1:
@@ -209,13 +195,6 @@ packages:
     resolution: {integrity: sha512-nsCnNtim90UKsB5YxoX65v3GEIw3iCHw9RM2DtdgkiqAbKh9pCdvi8AWNwkYf10Lu6fxNhXPpkpHbW6mihhvJA==}
     dependencies:
       '@lezer/common': 1.0.1
-    dev: false
-
-  /@lezer/javascript/1.0.2:
-    resolution: {integrity: sha512-IjOVeIRhM8IuafWNnk+UzRz7p4/JSOKBNINLYLsdSGuJS9Ju7vFdc82AlTt0jgtV5D8eBZf4g0vK4d3ttBNz7A==}
-    dependencies:
-      '@lezer/highlight': 1.0.0
-      '@lezer/lr': 1.2.3
     dev: false
 
   /@lezer/lr/1.2.3:
