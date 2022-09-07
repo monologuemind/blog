@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	import global_data from '$stores/data';
 	const headers: {
 		title: string;
@@ -35,8 +37,9 @@
 						{#each headers as header}
 							<td>
 								{#if header.key === 'name'}
-									<a class="link link-secondary link-hover" href={`article?file_path=${file.path}`}
-										>{file[header.key]}</a
+									<a
+										class="link link-secondary link-hover"
+										href={`${base}/article?file_path=${file.path}`}>{file[header.key]}</a
 									>
 								{:else if header.key === 'topics'}
 									{file[header.key].join(', ')}
