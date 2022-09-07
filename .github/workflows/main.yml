@@ -25,16 +25,16 @@ jobs:
 
       # Install pnpm for later steps
       - name: Install pnpm
-        run: curl -fsSL https://get.pnpm.io/install.sh | bash -
+        run: curl -fsSL https://get.pnpm.io/install.sh | bash - && source ~/.bashrc && pnpm install && pnpm run build
         
-      - name: Load pnpm in shell
-        run: source ~/.bashrc
+#       - name: Load pnpm in shell
+#         run: source ~/.bashrc
         
-      - name: Install dependencies
-        run: pnpm install
+#       - name: Install dependencies
+#         run: pnpm install
         
-      - name: Build Application
-        run: pnpm run build
+#       - name: Build Application
+#         run: pnpm run build
       
       # - name: Run preview
       #   run: pnpm run preview
