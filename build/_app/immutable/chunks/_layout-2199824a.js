@@ -1,1 +1,0 @@
-import{e as t}from"./index-e4a1e02d.js";import{g as r}from"./data-e6a5ed49.js";const l=!0,s=async({fetch:o,url:n})=>{let e;try{e=await(await o("data.json")).json()}catch(a){throw t(500,`${a}`)}r.set(e)},c=Object.freeze(Object.defineProperty({__proto__:null,prerender:l,load:s},Symbol.toStringTag,{value:"Module"}));export{c as _,s as l,l as p};
