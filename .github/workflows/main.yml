@@ -33,5 +33,5 @@ jobs:
       - name: Build Application
         run: pnpm run build
       
-      - name: Run preview
-        run: pnpm run preview
+      # - name: Run preview
+      #   run: pnpm run preview
