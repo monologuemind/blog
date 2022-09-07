@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "name": "Test 1",
+      "path": "markdown/test.md",
+      "description": "This is the first test",
+      "topics": [
+        "javascript",
+        "typescript"
+      ]
+    },
+    {
+      "name": "Test 2",
+      "path": "markdown/test2.md",
+      "description": "This is the second test",
+      "topics": [
+        "typescript",
+        "javascript"
+      ]
+    }
+  ]
+}
