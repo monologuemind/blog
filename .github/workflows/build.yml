@@ -41,3 +41,8 @@ jobs:
         
       - name: Build
         run: NODE_ENV=production && pnpm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
