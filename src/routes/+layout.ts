@@ -1,6 +1,8 @@
 import { type Load, error } from "@sveltejs/kit";
 import global_data from '$stores/data';
 
+export const prerender = true;
+
 export const load: Load = async ({ fetch, url }) => {
   let available_files;
   try {

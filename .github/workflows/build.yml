@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Build
 
 # Controls when the workflow will run
 on:
@@ -21,20 +21,23 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      # Install pnpm for later steps
-      - name: Install pnpm
-        run: curl -fsSL https://get.pnpm.io/install.sh | bash - && source ~/.bashrc && pnpm install && pnpm run build
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
         
-#       - name: Load pnpm in shell
-#         run: source ~/.bashrc
-        
-#       - name: Install dependencies
-#         run: pnpm install
-        
-#       - name: Build Application
-#         run: pnpm run build
-      
-      # - name: Run preview
-      #   run: pnpm run preview
+      - name: Build
+        run: NODE_ENV=production && pnpm run build
