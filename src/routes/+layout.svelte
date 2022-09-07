@@ -2,13 +2,14 @@
 	import '../app.postcss';
 	import global_data from '$stores/data';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	const get_random_markdown = () => {
 		if (!$global_data?.articles) {
-			return '/';
+			return `${base}/`;
 		}
 
-		return `article?file_path=${
+		return `${base}/article?file_path=${
 			$global_data?.articles[Math.floor(Math.random() * $global_data?.articles?.length)]?.path
 		}`;
 	};
@@ -16,13 +17,13 @@
 
 <div class="navbar bg-secondary text-primary-content">
 	<div class="flex-1">
-		<a href="/" class="btn btn-ghost normal-case text-xl">Home</a>
+		<a href={`${base}/`} class="btn btn-ghost normal-case text-xl">Home</a>
 	</div>
 	<div class="flex-none">
 		<ul class="menu menu-horizontal p-0">
-			<li><a href="/topics">Topics</a></li>
+			<li><a href={`${base}/topics`}>Topics</a></li>
 			<li tabindex="0">
-				<a href="/article-list"> Articles </a>
+				<a href={`${base}/article-list`}> Articles </a>
 			</li>
 			<li><button on:click={() => goto(get_random_markdown())}>Random Article</button></li>
 		</ul>
