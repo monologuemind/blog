@@ -21,7 +21,6 @@
 	</div>
 	<div class="flex-none">
 		<ul class="menu menu-horizontal p-0">
-			<li><a href={`${base}/topics`}>Topics</a></li>
 			<li tabindex="0">
 				<a href={`${base}/article-list`}> Articles </a>
 			</li>
