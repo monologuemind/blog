@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Markdown from '$components/Markdown.svelte';
 	import CodeMirror from 'svelte-codemirror-editor';
+	import { page } from '$app/stores';
 
-	let source = '';
+	let source = $page.url.searchParams.get('sample_text') || '';
 </script>
 
 <button on:click={() => (source = '')}>Reset</button>

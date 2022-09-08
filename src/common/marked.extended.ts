@@ -1,5 +1,5 @@
-import Custom from '$components/Custom.svelte';
-import type { marked } from 'marked';
+import ButtonWCount from '$components/ButtonWCount.svelte';
+import Select from '$components/Select.svelte';
 import type { SvelteComponent } from 'svelte';
 
 const get_start_regex = (selector: string) => {
@@ -13,11 +13,13 @@ const get_full_regex = (selector: string) => {
 const create_tokenizer = ({
 	level,
 	selector,
-	component
+	component,
+	sample_text
 }: {
 	level: 'block' | 'inline';
 	selector: string;
 	component: Partial<SvelteComponent>;
+	sample_text: string;
 }) => {
 	return {
 		[selector]: {
@@ -39,17 +41,25 @@ const create_tokenizer = ({
 					}
 				}
 			},
-			renderer: component
+			renderer: component,
+			sample_text,
 		}
 	};
 };
 
-export const what = {
+export const custom_marked_config = {
 	...create_tokenizer({
 		selector: 'button',
 		level: 'block',
-		component: Custom
+		component: ButtonWCount,
+		sample_text: '%button Here is a button'
+	}),
+	...create_tokenizer({
+		selector: 'select',
+		level: 'block',
+		component: Select,
+		sample_text: '%select Default Value -> Opt1, Opt2, Opt3'
 	})
 };
 
-export default what;
+export default custom_marked_config;

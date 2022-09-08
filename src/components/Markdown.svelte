@@ -1,13 +1,13 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
 	import { marked } from 'marked';
-	import { what } from '$common/marked.extended';
+	import { custom_marked_config } from '$common/marked.extended';
 
 	type CustomMarkedSetup = [MarkedExtension[], Record<string, any>];
 
-	const [extensions, renderers] = Object.keys(what).reduce(
+	const [extensions, renderers] = Object.keys(custom_marked_config).reduce(
 		(acc: CustomMarkedSetup, key) => {
-			const { tokenizer, renderer } = what[key];
+			const { tokenizer, renderer } = custom_marked_config[key];
 
 			acc[0].push(tokenizer);
 			acc[1] = {
