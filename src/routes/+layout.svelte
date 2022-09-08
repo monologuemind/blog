@@ -24,6 +24,9 @@
 			<li tabindex="0">
 				<a href={`${base}/article-list`}> Articles </a>
 			</li>
+			<li tabindex="0">
+				<a href={`${base}/selectors`}> Selectors </a>
+			</li>
 			<li><button on:click={() => goto(get_random_markdown())}>Random Article</button></li>
 		</ul>
 	</div>
