@@ -6,7 +6,7 @@ const manifest = {
   "short_name": "monologueminds_blog",
   "link": "",
   "name": "monologueminds_blog",
-  "start_url": dev ? "/" : "/blog",
+  "start_url": dev ? "/" : "/blog/",
   "icons": [
     {
       "src": "favicon.png",
