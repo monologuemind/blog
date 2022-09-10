@@ -7,6 +7,10 @@ declare namespace App {
 	// interface Platform {}
 }
 
+declare interface Window {
+	opera?: any;
+}
+
 type ArgumentTypes<F extends Function> = F extends (...args: infer A) => any ? A : never;
 
 type ArrayElement<ArrType> = ArrType extends readonly (infer ElementType)[] ? ElementType : never;
