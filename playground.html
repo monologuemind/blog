@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/blog/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<style>
-			html,
-			body,
-			#sveltekit-entry {
-				height: 100%;
-				width: 100%;
-			}
-		</style>
-		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/blog/_app/immutable/start-b1df031d.js">
-	<link rel="modulepreload" href="/blog/_app/immutable/chunks/index-a045c4c7.js">
-	<link rel="modulepreload" href="/blog/_app/immutable/chunks/singletons-c7210407.js">
-	<link rel="modulepreload" href="/blog/_app/immutable/chunks/index-4d0b5003.js">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="/blog/favicon.png" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="description" content="MonologueMinds Blog" />
+	<link rel="manifest" href="/blog/manifest.json">
+	<link rel="apple-touch-icon" href="/blog/favicon.png">
+	<meta name="theme-color" content="#3367D6" />
+	<title>MonologueMinds Blog</title>
+	<style>
+		html,
+		body,
+		#sveltekit-entry {
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+	<meta http-equiv="content-security-policy" content="">
+	<link rel="modulepreload" href="/blog/_app/immutable/start-ee4ffb6a.js">
+	<link rel="modulepreload" href="/blog/_app/immutable/chunks/index-706dfd2d.js">
+	<link rel="modulepreload" href="/blog/_app/immutable/chunks/singletons-e037dfff.js">
+	<link rel="modulepreload" href="/blog/_app/immutable/chunks/index-90e9b6c2.js">
 	<link rel="modulepreload" href="/blog/_app/immutable/chunks/paths-7e180b47.js">
 	<link rel="modulepreload" href="/blog/_app/immutable/chunks/index-7a3c47c2.js">
-	</head>
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', function () {
+				navigator.serviceWorker.register('/blog/service-worker.js');
+			});
+		}
+	</script>
+</head>
 
-	<body>
-		<div id="sveltekit-entry">
+<body>
+	<div id="sveltekit-entry">
 		<script type="module" data-sveltekit-hydrate="45h">
-		import { start } from "/blog/_app/immutable/start-b1df031d.js";
+		import { start } from "/blog/_app/immutable/start-ee4ffb6a.js";
 
 		start({
 			env: {},
@@ -34,5 +47,6 @@
 			trailing_slash: "never"
 		});
 	</script></div>
-	</body>
+</body>
+
 </html>
