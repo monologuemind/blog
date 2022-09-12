@@ -1,0 +1,1 @@
+import{e as o}from"./index-8e094bd2.js";const n=!1,l=async({fetch:e,url:r})=>{const t=r.searchParams.get("file_path");if(!t)return{fetch:e};try{const s=await(await e(t)).text();return{fetch:e,file_data:s}}catch(a){throw o(500,`${a}`)}},i=Object.freeze(Object.defineProperty({__proto__:null,ssr:n,load:l},Symbol.toStringTag,{value:"Module"}));export{i as _,l,n as s};
