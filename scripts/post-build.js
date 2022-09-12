@@ -29,6 +29,4 @@ const manifest = {
   "description": "Blogs be blogging"
 };
 
-// console.log(process.cwd());
-
 writeFileSync('./build/manifest.json', JSON.stringify(manifest));

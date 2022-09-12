@@ -37,10 +37,6 @@ worker.addEventListener('activate', (event) => {
   );
 });
 
-// worker.addEventListener('fetch', (event) => {
-//   console.log('fetch', event);
-// });
-
 /**
  * Fetch the asset from the network and store it in the cache.
  * Fall back to the cache if the user is offline.

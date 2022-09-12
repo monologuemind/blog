@@ -15,9 +15,9 @@
 			<Markdown source={custom_marked_config[selector.replace('%', '')]?.sample_text} />
 			<a
 				class="link link-hover link-secondary"
-				href={`${base}/playground?sample_text=${custom_marked_config[
-					selector.replace('%', '')
-				]?.sample_text.replace('%', '%25')}`}>Try in playground</a
+				href={`${base}/playground?sample_text=${encodeURIComponent(
+					custom_marked_config[selector.replace('%', '')]?.sample_text
+				)}`}>Try in playground</a
 			>
 		</div>
 	</div>

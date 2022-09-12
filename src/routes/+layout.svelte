@@ -4,6 +4,7 @@
 	import compatability from '$stores/compatability';
 	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
+	import StoreDebug from '$components/StoreDebug.svelte';
 
 	const get_random_markdown = () => {
 		if (!$global_data?.articles) {
@@ -28,6 +29,8 @@
 			window.innerWidth < 500;
 	}
 </script>
+
+<StoreDebug />
 
 <div class="navbar bg-secondary text-primary-content">
 	<div class="flex-1">
@@ -60,7 +63,10 @@
 				<li tabindex="0">
 					<a class="normal-case text-xl" href={`${base}/selectors`}> Selectors </a>
 				</li>
-				<li>
+				<li tabindex="0">
+					<a class="normal-case text-xl" href={`${base}/playground`}> Playground </a>
+				</li>
+				<li tabindex="0">
 					<button class="normal-case text-xl" on:click={() => goto(get_random_markdown())}
 						>Random Article</button
 					>
@@ -76,7 +82,14 @@
 				<li tabindex="0">
 					<a class="normal-case text-xl" href={`${base}/selectors`}> Selectors </a>
 				</li>
-				<li><button on:click={() => goto(get_random_markdown())}>Random Article</button></li>
+				<li tabindex="0">
+					<a class="normal-case text-xl" href={`${base}/playground`}> Playground </a>
+				</li>
+				<li tabindex="0">
+					<button class="normal-case text-xl" on:click={() => goto(get_random_markdown())}
+						>Random Article</button
+					>
+				</li>
 			</ul>
 		</div>
 	{/if}

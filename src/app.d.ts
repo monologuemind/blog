@@ -9,6 +9,9 @@ declare namespace App {
 
 declare interface Window {
 	opera?: any;
+	page_state: import('svelte/store').Writable<{
+		[key: string]: Record<string, any>
+	}>;
 }
 
 type ArgumentTypes<F extends Function> = F extends (...args: infer A) => any ? A : never;
