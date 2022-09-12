@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let text = '';
 
-	$: [default_value, rest] = text.split('->');
+	$: [default_value, rest] = text?.split('->') || [''];
 
-	$: options = rest.split(',');
+	$: options = rest && rest?.trim() ? rest?.split(',') : [];
 </script>
 
 <select class="select w-full max-w-xs">
