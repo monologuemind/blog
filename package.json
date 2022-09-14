@@ -13,8 +13,8 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@leveluptuts/svelte-toy": "^2.0.3",
 		"@leveluptuts/svelte-side-menu": "^1.0.5",
+		"@leveluptuts/svelte-toy": "^2.0.3",
 		"@playwright/test": "^1.25.0",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
@@ -42,6 +42,7 @@
 	"type": "module",
 	"dependencies": {
 		"codemirror": "6.0.0",
+		"highlight.js": "^11.6.0",
 		"marked": "^4.1.0",
 		"octokit": "^2.0.7",
 		"svelte-codemirror-editor": "^1.1.0",

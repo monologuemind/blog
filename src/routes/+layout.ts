@@ -6,7 +6,7 @@ export const prerender = true;
 export const load: Load = async ({ fetch, url }) => {
 	let available_files;
 	try {
-		const available_files_response = await fetch('data.json');
+		const available_files_response = await fetch('/data.json');
 
 		available_files = await available_files_response.json();
 	} catch (e) {

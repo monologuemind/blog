@@ -39,7 +39,7 @@
 								{#if header.key === 'name'}
 									<a
 										class="link link-secondary link-hover"
-										href={`${base}/article?file_path=${file.path}`}>{file[header.key]}</a
+										href={`${base}/article/${file.pathname}`}>{file[header.key]}</a
 									>
 								{:else if header.key === 'topics'}
 									{file[header.key].join(', ')}
