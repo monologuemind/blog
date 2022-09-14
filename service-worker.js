@@ -1,94 +1,102 @@
-const m = [
-  "/blog/_app/immutable/start-f779a64c.js",
-  "/blog/_app/immutable/components/pages/_layout.svelte-6daafd8f.js",
-  "/blog/_app/immutable/assets/_layout-b5e733de.css",
-  "/blog/_app/immutable/components/error.svelte-f0488983.js",
-  "/blog/_app/immutable/components/pages/_page.svelte-d71d4860.js",
-  "/blog/_app/immutable/components/pages/article/_page.svelte-b8bdca31.js",
-  "/blog/_app/immutable/components/pages/article-list/_page.svelte-af7bba45.js",
-  "/blog/_app/immutable/components/pages/edit/_page.svelte-ec221535.js",
-  "/blog/_app/immutable/components/pages/playground/_page.svelte-7b985f61.js",
-  "/blog/_app/immutable/components/pages/selectors/_page.svelte-89bfe52f.js",
-  "/blog/_app/immutable/modules/pages/_layout.ts-f9952288.js",
+const n = [
+  "/blog/_app/immutable/start-f5159b00.js",
+  "/blog/_app/immutable/components/pages/_layout.svelte-2a5bae3e.js",
+  "/blog/_app/immutable/assets/_layout-261401aa.css",
+  "/blog/_app/immutable/components/error.svelte-5dc10a4c.js",
+  "/blog/_app/immutable/components/pages/article/_layout.svelte-7c783a45.js",
+  "/blog/_app/immutable/assets/_layout-6d1fb0d3.css",
+  "/blog/_app/immutable/components/pages/_page.svelte-cb8c2f1b.js",
+  "/blog/_app/immutable/components/pages/_legacy_routes/_edit/_page.svelte-2d5883fc.js",
+  "/blog/_app/immutable/components/pages/_legacy_routes/_playground/_page.svelte-c7ea520f.js",
+  "/blog/_app/immutable/components/pages/_legacy_routes/_selectors/_page.svelte-721b1e5b.js",
+  "/blog/_app/immutable/components/pages/article/_page.svelte-906ed1e9.js",
+  "/blog/_app/immutable/assets/_page-6d1fb0d3.css",
+  "/blog/_app/immutable/components/pages/article/extractors/_page.svelte-05fe0358.js",
+  "/blog/_app/immutable/components/pages/article-list/_page.svelte-a9ca5433.js",
+  "/blog/_app/immutable/modules/pages/_layout.ts-1d166e16.js",
   "/blog/_app/immutable/modules/pages/_page.ts-6aba1f63.js",
-  "/blog/_app/immutable/modules/pages/article/_page.ts-531272af.js",
+  "/blog/_app/immutable/modules/pages/_legacy_routes/_edit/_page.ts-45b21a84.js",
+  "/blog/_app/immutable/modules/pages/_legacy_routes/_playground/_page.ts-00a9d2d9.js",
+  "/blog/_app/immutable/modules/pages/_legacy_routes/_selectors/_page.ts-2df6f0c1.js",
+  "/blog/_app/immutable/modules/pages/article/_page.ts-d6b1a2f4.js",
+  "/blog/_app/immutable/modules/pages/article/extractors/_page.ts-5e771440.js",
   "/blog/_app/immutable/modules/pages/article-list/_page.ts-146aedd8.js",
-  "/blog/_app/immutable/modules/pages/edit/_page.ts-0deaec14.js",
-  "/blog/_app/immutable/modules/pages/playground/_page.ts-56ec0363.js",
-  "/blog/_app/immutable/modules/pages/selectors/_page.ts-5addf49d.js",
-  "/blog/_app/immutable/chunks/singletons-b90a3d93.js",
-  "/blog/_app/immutable/chunks/paths-dc1081f2.js",
-  "/blog/_app/immutable/chunks/index-35b12e3c.js",
-  "/blog/_app/immutable/chunks/control-cb0e148f.js",
-  "/blog/_app/immutable/chunks/index-eb803a30.js",
-  "/blog/_app/immutable/chunks/data-36da4607.js",
-  "/blog/_app/immutable/chunks/navigation-5927b467.js",
-  "/blog/_app/immutable/chunks/page.state-b2fe2329.js",
-  "/blog/_app/immutable/chunks/_layout-c1f6ce61.js",
-  "/blog/_app/immutable/chunks/index-8e094bd2.js",
-  "/blog/_app/immutable/chunks/stores-b24668e6.js",
+  "/blog/_app/immutable/chunks/singletons-ac5e3bf0.js",
+  "/blog/_app/immutable/chunks/paths-b500ea22.js",
+  "/blog/_app/immutable/chunks/index-dc0a15ca.js",
+  "/blog/_app/immutable/chunks/control-c34e24e7.js",
+  "/blog/_app/immutable/chunks/index-89a39cf6.js",
+  "/blog/_app/immutable/chunks/data-8d72ffdb.js",
+  "/blog/_app/immutable/chunks/navigation-04577e39.js",
+  "/blog/_app/immutable/chunks/page.state-fa4099fe.js",
+  "/blog/_app/immutable/chunks/_layout-202e13d4.js",
+  "/blog/_app/immutable/chunks/index-7e17df3a.js",
+  "/blog/_app/immutable/chunks/stores-067b2245.js",
   "/blog/_app/immutable/chunks/_page-2d218a6f.js",
-  "/blog/_app/immutable/chunks/Markdown-d95da4a3.js",
-  "/blog/_app/immutable/chunks/_page-8105092e.js",
-  "/blog/_app/immutable/chunks/_page-0735bfdf.js",
-  "/blog/_app/immutable/chunks/Edit-9572f06e.js",
+  "/blog/_app/immutable/chunks/Edit-e63d5363.js",
   "/blog/_app/immutable/assets/Edit-eaeaa541.css",
-  "/blog/_app/immutable/chunks/_page-e1bc7dad.js",
-  "/blog/_app/immutable/chunks/_page-02f63106.js",
-  "/blog/_app/immutable/chunks/_page-3998c61e.js",
-  "/blog/_app/immutable/chunks/0-477979e6.js",
-  "/blog/_app/immutable/chunks/1-b778fc68.js",
-  "/blog/_app/immutable/chunks/2-cbb25ff7.js",
-  "/blog/_app/immutable/chunks/3-8ecb0557.js",
-  "/blog/_app/immutable/chunks/4-ca980daf.js",
-  "/blog/_app/immutable/chunks/5-6e8661a8.js",
-  "/blog/_app/immutable/chunks/6-fcd116b0.js",
-  "/blog/_app/immutable/chunks/7-ad822c54.js"
-], i = [
+  "/blog/_app/immutable/chunks/Markdown-ee0d7f9c.js",
+  "/blog/_app/immutable/chunks/H2-c3d7b268.js",
+  "/blog/_app/immutable/chunks/_page-d8797f64.js",
+  "/blog/_app/immutable/chunks/_page-379e80a7.js",
+  "/blog/_app/immutable/chunks/_page-a27e1eb2.js",
+  "/blog/_app/immutable/chunks/_page-8438084f.js",
+  "/blog/_app/immutable/chunks/_page-ae7ad173.js",
+  "/blog/_app/immutable/chunks/_page-0735bfdf.js",
+  "/blog/_app/immutable/chunks/0-fda987c4.js",
+  "/blog/_app/immutable/chunks/1-f27e5403.js",
+  "/blog/_app/immutable/chunks/2-7b57d9e3.js",
+  "/blog/_app/immutable/chunks/3-7cb0dfb9.js",
+  "/blog/_app/immutable/chunks/4-499b428d.js",
+  "/blog/_app/immutable/chunks/5-1ea7c023.js",
+  "/blog/_app/immutable/chunks/6-b3f5e908.js",
+  "/blog/_app/immutable/chunks/7-6555a7bf.js",
+  "/blog/_app/immutable/chunks/8-4ee5283c.js",
+  "/blog/_app/immutable/chunks/9-e533f95e.js"
+], u = [
   "/blog/.nojekyll",
+  "/blog/code.css",
   "/blog/data.json",
   "/blog/favicon.ico",
   "/blog/favicon.png",
   "/blog/manifest.json",
-  "/blog/markdown/test.md",
-  "/blog/markdown/test2.md",
   "/blog/robots.txt"
-], p = new Date().toDateString(), t = self, c = `cache${p}`, b = m.concat(i).filter((a) => !a.includes("jekyll")), u = new Set(b);
-t.addEventListener("install", (a) => {
-  a.waitUntil(
-    caches.open(c).then((e) => {
-      e == null || e.addAll(b);
+], o = new Date().toDateString(), t = self, c = `cache${o}`, b = n.concat(u).filter((e) => !e.includes("jekyll")), i = new Set(b);
+t.addEventListener("install", (e) => {
+  e.waitUntil(
+    caches.open(c).then((a) => {
+      a == null || a.addAll(b);
     }).then(() => {
       t.skipWaiting();
     })
   );
 });
-t.addEventListener("activate", (a) => {
-  a.waitUntil(
-    caches.keys().then(async (e) => {
-      for (const s of e)
+t.addEventListener("activate", (e) => {
+  e.waitUntil(
+    caches.keys().then(async (a) => {
+      for (const s of a)
         s !== c && await caches.delete(s);
       t.clients.claim();
     })
   );
 });
-async function g(a) {
-  const e = await caches.open(`offline${p}`);
+async function g(e) {
+  const a = await caches.open(`offline${o}`);
   try {
-    const s = await fetch(a);
-    return e.put(a, s.clone()), s;
+    const s = await fetch(e);
+    return a.put(e, s.clone()), s;
   } catch (s) {
-    const l = await e.match(a);
+    const l = await a.match(e);
     if (l)
       return l;
     throw s;
   }
 }
-t.addEventListener("fetch", (a) => {
-  if (a.request.method !== "GET" || a.request.headers.has("range"))
+t.addEventListener("fetch", (e) => {
+  if (e.request.method !== "GET" || e.request.headers.has("range"))
     return;
-  const e = new URL(a.request.url), s = e.protocol.startsWith("http"), l = e.hostname === self.location.hostname && e.port !== self.location.port, o = e.host === self.location.host && u.has(e.pathname), n = a.request.cache === "only-if-cached" && !o;
-  s && !l && !n && a.respondWith(
-    (async () => o && await caches.match(a.request) || g(a.request))()
+  const a = new URL(e.request.url), s = a.protocol.startsWith("http"), l = a.hostname === self.location.hostname && a.port !== self.location.port, p = a.host === self.location.host && i.has(a.pathname), m = e.request.cache === "only-if-cached" && !p;
+  s && !l && !m && e.respondWith(
+    (async () => p && await caches.match(e.request) || g(e.request))()
   );
 });
