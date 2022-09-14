@@ -1,9 +1,11 @@
 import ButtonWCount from '$components/markdown/Button.svelte';
-import FeaturedButton from '$components/markdown/FeaturedButton.svelte'
+import FeaturedButton from '$components/markdown/FeaturedButton.svelte';
 import Define from '$components/markdown/Define.svelte';
 import Select from '$components/markdown/Select.svelte';
 import type { SvelteComponent } from 'svelte';
 import Run from '$components/markdown/Run.svelte';
+import H1 from '$components/markdown/H1.svelte';
+import H2 from '$components/markdown/H2.svelte';
 
 const get_start_regex = (selector: string) => {
 	return new RegExp(`%${selector}`);
@@ -80,6 +82,18 @@ export const custom_marked_config = {
 		level: 'block',
 		component: Run,
 		sample_text: '%run console.log("Hello World!")'
+	}),
+	...create_tokenizer({
+		selector: 'h1',
+		level: 'block',
+		component: H1,
+		sample_text: '%h1 Header'
+	}),
+	...create_tokenizer({
+		selector: 'h2',
+		level: 'block',
+		component: H2,
+		sample_text: '%h2 Header'
 	})
 };
 

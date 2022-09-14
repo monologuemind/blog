@@ -7,6 +7,11 @@ const config = {
 		extend: {}
 	},
 
+	daisyui: {
+		theme: true,
+		darkTheme: "dark",
+	},
+
 	plugins: [daisyui]
 };
 

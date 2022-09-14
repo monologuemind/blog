@@ -2,6 +2,7 @@
 	import SvelteMarkdown from 'svelte-markdown';
 	import { marked } from 'marked';
 	import { custom_marked_config } from '$common/marked.extended';
+	import hljf from 'highlight.js';
 
 	type CustomMarkedSetup = [MarkedExtension[], Record<string, any>];
 
@@ -26,8 +27,17 @@
 		extensions
 	});
 	const options = marked.defaults;
+	const opts = marked.setOptions({
+		...options,
+		highlight: function (code) {
+			const x = hljf.highlightAuto(code).value;
+
+			console.log('data: ', code, x);
+			return x;
+		}
+	});
 </script>
 
 {#key source}
-	<SvelteMarkdown {source} {renderers} {options} />
+	<SvelteMarkdown {source} {renderers} options={opts} />
 {/key}

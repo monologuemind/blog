@@ -1,3 +1,9 @@
+/// <reference types="mdsvex/globals" />
+// Alt option for the above
+// declare module "*.svx" {
+// 	export { SvelteComponentDev as default } from "svelte/internal";
+// }
+
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 // and what to do when importing types
@@ -6,7 +12,6 @@ declare namespace App {
 	// interface PageData {}
 	// interface Platform {}
 }
-
 declare interface Window {
 	opera?: any;
 	page_state: import('svelte/store').Writable<{
@@ -24,6 +29,6 @@ type MarkedExtension = ArrayElement<
 	ArgumentTypes<typeof import('marked').marked.use>['0']['extensions']
 >;
 
-type Article = { name: string; path: string; description: string; topics: string[] };
+type Article = { name: string; pathname: string; description: string; topics: string[] };
 
 type Data = { articles?: Article[] };
