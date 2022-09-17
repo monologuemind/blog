@@ -1,9 +1,9 @@
 {
 	"articles": [
 		{
-			"name": "Typescript Extractors",
-			"pathname": "extractors",
-			"description": "Advanced typing by generic extraction",
+			"name": "Typescript Dynamic Typing",
+			"pathname": "dynamic-typing",
+			"description": "Types that use types to make your life easier.",
 			"topics": [
 				"typescript"
 			]

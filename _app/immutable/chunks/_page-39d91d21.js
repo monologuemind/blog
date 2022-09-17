@@ -1,0 +1,1 @@
+import{b as e}from"./paths-88cc51a0.js";import{r as o}from"./index-1458f7f0.js";const r=!1,t=async()=>{throw o(308,`${e}/article-list`)},l=Object.freeze(Object.defineProperty({__proto__:null,ssr:r,load:t},Symbol.toStringTag,{value:"Module"}));export{l as _,t as l,r as s};
