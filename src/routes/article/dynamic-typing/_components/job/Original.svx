@@ -1,0 +1,55 @@
+```ts
+// Sample enum for different types of requests
+enum FindTypes {
+  single_date = 'single_date',
+  date_range = 'date_range'
+}
+
+// Sample query for possible options
+interface Query {
+  to: string;
+  // from is only necessary if requesting a date_range
+  from?: string;
+}
+
+// Interface for function parameters
+interface FindParameter {
+  type: FindTypes;
+  query: Query;
+}
+
+// Interface for response data type
+interface Article {
+  title: string;
+  content: string;
+}
+
+const find = async ({ type, query }: FindParameter): Promise<Article[]> => {
+  const queryObject = new URLSearchParams({ ...query });
+  const response = await fetch(
+    `https://some-date-data.com?format=json&${queryObject.toString()}`
+  );
+  return response.json();
+};
+
+const main = async () => {
+  // Only sending 'to' into the query as it's all that is required
+  const single_day_of_articles: Article[] = await find({
+    type: FindTypes.single_date,
+    query: { to: '2022-08-01' }
+  });
+  // Sending both 'to' and 'from' as both are technincally required for the API
+  // But not required by the interface used for function parameters
+  const multiple_days_of_articles: Article[] = await find({
+    type: FindTypes.date_range,
+    query: { to: '2022-08-01', from: '2022-08-08' }
+  });
+  // This would fail but you wouldn't know until this code executes
+  const error_getting_articles: Article[] = await find({
+    type: FindTypes.date_range,
+    query: { to: '2022-08-01' }
+  });
+};
+
+main();
+```

@@ -1,0 +1,21 @@
+```ts
+// Sample Database import
+import db from './path/to/db';
+
+// Sample interfaces
+interface Person {
+  name: string;
+}
+
+const create = async (personOrPeople: Person | Person[]): Promise<Person[] | Person> => {
+  return db.create(personOrPeople);
+};
+
+const main = async () => {
+  // Return types are not inferred by the data passed to the create function
+  const people: Person[] | Person = await create([ { name: 'Arya Stark' }, { name: 'Jon Snow' } ]);
+  const person: Person[] | Person = await create({ name: 'Jon Snow' });
+}
+
+main();
+```

@@ -1,0 +1,17 @@
+<script lang='ts'>
+  import Tabs from '$components/Tabs.svelte';
+  import FindOriginal from './Original.svx';
+  import FindAdvanced from './Advanced.svx';
+</script>
+
+**So to start we'll take a look at a fake HTTP GET endpoint that can return paginated data or an array of data**
+
+<Tabs tabs={[{ name: 'original', active: true },{ name: 'advanced', active: false }]} let:active_tab>
+  {#key active_tab.name}
+      {#if active_tab.name === 'original'}
+          <FindOriginal />
+      {:else}
+          <FindAdvanced />
+      {/if}
+  {/key}
+</Tabs>

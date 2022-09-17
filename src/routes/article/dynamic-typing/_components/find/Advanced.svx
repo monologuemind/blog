@@ -1,0 +1,50 @@
+```ts
+// Sample interfaces
+interface Person {
+  name: string;
+}
+
+// Paginated could now be used for multiple data types
+interface Paginated<Type> {
+  data: Type[];
+  page: number;
+  limit: number;
+}
+
+// Parameter typing moved out to an interface
+interface Parameters {
+  paginated?: boolean;
+  limit?: number;
+}
+
+// Dynamic type "function" where PartialParameters is actually like a Typescript parameter
+type ResponseForFind<PartialParameters> = PartialParameters extends { paginated: true }
+  ? Paginated<Person>
+  : Person[];
+
+// Find function now has generics used for typing its parameters
+const find = async <PartialParameters extends Parameters>({
+  paginated = true,
+  limit = 10
+}: PartialParameters): Promise<ResponseForFind<PartialParameters>> => {
+  // Return type does have to be forced inside of the find function
+  if (paginated) {
+    return {
+      data: [{ name: 'Arya Start' }, { name: 'Jon Snow' }],
+      limit: 10,
+      page: 0
+    } as ResponseForFind<PartialParameters>;
+  }
+
+  // Return type does have to be forced inside of the find function
+  return [{ name: 'Arya Start' }, { name: 'Jon Snow' }] as ResponseForFind<PartialParameters>;
+};
+
+// Types would now be known because we can type check based on the parameters passed to the function
+const main = async () => {
+  const people: Person[] = await find({ paginated: false });
+  const paginated_people: Paginated<Person> = await find({ paginated: true });
+};
+
+main();
+```

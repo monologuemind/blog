@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let tabs: { name: string; active: boolean; data?: string }[];
+	export let tabs: { name: string; active: boolean }[];
 
 	$: active_tab = tabs.find((tab) => tab.active);
 

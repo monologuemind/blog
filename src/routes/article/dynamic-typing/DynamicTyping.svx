@@ -1,0 +1,59 @@
+<script lang='ts'>
+  import H1 from '$components/H1.svelte';
+  import H2 from '$components/H2.svelte';
+  import FindTabView from './_components/find/TabView.svx';
+  import CreateTabView from './_components/create/TabView.svx';
+  import JobTabView from './_components/job/TabView.svx';
+  import Collapse from '$components/Collapse.svelte';
+</script>
+
+<H1>Typescript Dynamic Typing</H1>
+
+**Have you ever run into an issue where a function can return multiple types?**
+```ts
+const x: Person | Person[] = create([
+  { name: 'Jon Snow' },
+  { name: 'Arya Stark' },
+  { name: 'Sansa Stark' }
+]);
+```
+
+**Or how about a function whose required parameters can change depending on a related but separate parameter?**
+```ts
+const create_job = (parameters: { type: string; options?: { some: string } }) => {
+  // Example of additional actions taken with the options
+  if (parameters.type === 'requires_other_parameters') {
+    // This would normally cause errors since options is optional
+    console.log('Required Parameters: ', parameters.options.some);
+  }
+
+  return 'Job Created';
+};
+const job1 = create_job({ type: 'no_other_required_parameters' }); // options is not required
+const job2 = create_job({
+  type: 'requires_other_parameters',
+  options: { some: 'other_parameter' }
+}); // options is required
+```
+
+**This has been an issue that has come up numerous times for me since working full-time on web applications with Typescript. So today I want to go over some ways that these situations can be improved.**
+
+
+<Collapse>
+  <H2 slot='title'>Paginated Data</H2>
+  <FindTabView slot='content' />
+</Collapse>
+
+<Collapse>
+  <H2 slot='title'>Creating Data</H2>
+  <CreateTabView slot='content' />
+</Collapse>
+
+<Collapse>
+  <H2 slot='title'>Function Parameters</H2>
+  <JobTabView slot='content' />
+</Collapse>
+
+**So with those examples, I hope you can see how adding in a little bit of advanced Typescript can help you code without remembering all of the nuances of different processes.**
+
+**It's also worth noting that many of these examples contain more code than the original however it should be quite reusable as the majority of the principles are similar.**
