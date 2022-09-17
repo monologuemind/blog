@@ -1,0 +1,55 @@
+```ts
+// Sample enum for different types of requests
+enum FindTypes {
+  single_date = 'single_date',
+  date_range = 'date_range'
+}
+
+type Query<FindType> = FindType extends FindTypes.date_range
+  ? { to: string; from: string }
+  : { to: string };
+
+type FindParameter<PartialFindTypes> = {
+  type: PartialFindTypes;
+  query: Query<PartialFindTypes>;
+};
+
+// Interface for response data type
+interface Article {
+  title: string;
+  content: string;
+}
+
+const find = async <PartialFindType extends FindTypes>({
+  type,
+  query
+}: FindParameter<PartialFindType>): Promise<Article[]> => {
+  const queryObject = new URLSearchParams({ ...query });
+  const response = await fetch(
+    `https://some-date-data.com?format=json&${queryObject.toString()}`
+  );
+  return response.json();
+};
+
+const main = async () => {
+  // Only sending 'to' into the query as it's all that is required
+  const single_day_of_articles: Article[] = await find({
+    type: FindTypes.single_date,
+    query: { to: '2022-08-01' }
+  });
+  // Sending both 'to' and 'from' as both are required by the API and the
+  // Find function parameter type
+  const multiple_days_of_articles: Article[] = await find({
+    type: FindTypes.date_range,
+    query: { to: '2022-08-01', from: '2022-08-08' }
+  });
+  // This would now show proper syntax errors
+  // As it is missing the 'from' property on the query
+  const error_getting_articles: Article[] = await find({
+    type: FindTypes.date_range,
+    query: { to: '2022-08-01' }
+  });
+};
+
+main();
+```

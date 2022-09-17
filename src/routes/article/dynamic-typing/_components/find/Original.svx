@@ -1,0 +1,35 @@
+```ts
+// Sample interfaces
+interface Person {
+  name: string;
+}
+
+interface PersonPaginated {
+  data: Person[];
+  page: number;
+  limit: number;
+}
+
+const find = async ({
+  paginated = true,
+  limit = 10
+}: {
+  paginated?: boolean;
+  limit?: number;
+}): Promise<Person[] | PersonPaginated> => {
+  // Return the paginated data if paginated is true
+  if (paginated) {
+    return { data: [{ name: 'Arya Start' }, { name: 'Jon Snow' }], limit: 10, page: 0 };
+  }
+
+  // Otherwise return the array of people
+  return [{ name: 'Arya Start' }, { name: 'Jon Snow' }]
+};
+
+const main = async () => {
+  const people: Person[] | PersonPaginated = await find({ paginated: false });
+  const paginated_people: Person[] | PersonPaginated = await find({});
+}
+
+main();
+```

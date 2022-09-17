@@ -1,0 +1,17 @@
+<script lang='ts'>
+  import Tabs from '$components/Tabs.svelte';
+  import CreateOriginal from './Original.svx';
+  import CreateAdvanced from './Advanced.svx';
+</script>
+
+**So to start we'll take a look at a fake HTTP POST endpoint that can return a singular object or an array of objects**
+
+<Tabs tabs={[{ name: 'original', active: true },{ name: 'advanced', active: false }]} let:active_tab>
+  {#key active_tab.name}
+      {#if active_tab.name === 'original'}
+          <CreateOriginal />
+      {:else}
+          <CreateAdvanced />
+      {/if}
+  {/key}
+</Tabs>
