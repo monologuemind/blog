@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { v4 } from 'uuid';
+	import MaterialIcon from './MaterialIcon.svelte';
+
+	export let open = false;
 
 	const id = v4();
 
 	function scrollIntoView() {
+		open = !open;
 		const el = document.querySelector(`#content-${id}`);
 		if (!el) return;
 		el.scrollIntoView({
@@ -17,7 +21,10 @@
 	<div
 		class="collapse-title bg-base-100 text-primary-content peer-checked:bg-base-200 peer-checked:text-secondary-content"
 	>
-		<slot name="title" />
+		<MaterialIcon icon={!open ? 'chevron_right' : 'expand_more'} />
+		<div style:display="contents">
+			<slot name="title" />
+		</div>
 	</div>
 	<div
 		class="collapse-content bg-base-100 text-primary-content peer-checked:bg-base-200 peer-checked:text-secondary-content"

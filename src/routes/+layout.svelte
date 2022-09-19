@@ -129,6 +129,9 @@
 				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 			>
 				<li tabindex="0">
+					<a class="normal-case text-xl" href={`${base}/topics`}> Topics </a>
+				</li>
+				<li tabindex="0">
 					<a class="normal-case text-xl" href={`${base}/article-list`}> Articles </a>
 				</li>
 				<!-- <li tabindex="0">
@@ -147,6 +150,9 @@
 	{:else}
 		<div class="flex-none">
 			<ul class="menu menu-horizontal p-0">
+				<li tabindex="0">
+					<a class="normal-case text-xl" href={`${base}/topics`}> Topics </a>
+				</li>
 				<li tabindex="0">
 					<a class="normal-case text-xl" href={`${base}/article-list`}> Articles </a>
 				</li>

@@ -7,8 +7,8 @@
 		key: keyof Article;
 	}[] = [
 		{
-			title: 'Name',
-			key: 'name'
+			title: 'Title',
+			key: 'title'
 		},
 		{
 			title: 'Description',
@@ -36,7 +36,7 @@
 					<tr>
 						{#each headers as header}
 							<td>
-								{#if header.key === 'name'}
+								{#if header.key === 'title'}
 									<a
 										class="link link-secondary link-hover"
 										href={`${base}/article/${file.pathname}`}>{file[header.key]}</a

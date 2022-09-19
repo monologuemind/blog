@@ -1,13 +1,19 @@
+---
+  title: Typescript Dynamic Typing
+  description: Types that use types to make your life easier.
+  topics: typescript
+---
+
 <script lang='ts'>
   import H1 from '$components/H1.svelte';
   import H2 from '$components/H2.svelte';
   import FindTabView from './_components/find/TabView.svx';
   import CreateTabView from './_components/create/TabView.svx';
-  import JobTabView from './_components/job/TabView.svx';
+  import FunctionTabView from './_components/function/TabView.svx';
   import Collapse from '$components/Collapse.svelte';
 </script>
 
-<H1>Typescript Dynamic Typing</H1>
+<H1>{title}</H1>
 
 **Have you ever run into an issue where a function can return multiple types?**
 ```ts
@@ -51,7 +57,7 @@ const job2 = create_job({
 
 <Collapse>
   <H2 slot='title'>Function Parameters</H2>
-  <JobTabView slot='content' />
+  <FunctionTabView slot='content' />
 </Collapse>
 
 **So with those examples, I hope you can see how adding in a little bit of advanced Typescript can help you code without remembering all of the nuances of different processes.**

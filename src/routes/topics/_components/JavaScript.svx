@@ -1,0 +1,16 @@
+<script lang='ts'>
+  import global_data from '$stores/data';
+
+  $: javascript_articles = $global_data.articles.filter(article => article.topics.includes('javascript'));
+</script>
+
+{#if javascript_articles.length}
+  {#each javascript_articles as article}
+    <a
+      class="link link-secondary link-hover"
+      href={`${base}/article/${article.pathname}`}>{article.title}</a
+    >
+  {/each}
+{:else}
+  <p>Oh no! We don't have any articles on this topic yet. Check back later to see if we've added any!</p>
+{/if}

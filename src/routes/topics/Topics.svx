@@ -1,0 +1,16 @@
+<script lang='ts'>
+  import H1 from '$components/H1.svelte';
+  import H2 from '$components/H2.svelte';
+  import Collapse from '$components/Collapse.svelte';
+  import Topics from './_components';
+</script>
+
+<H1>Topics</H1>
+{#each ['JavaScript', 'TypeScript'] as topic}
+  <Collapse>
+    <H2 slot='title'>{topic}</H2>
+    <div slot='content'>
+      <svelte:component this={Topics[topic]}/>
+    </div>
+  </Collapse>
+{/each}

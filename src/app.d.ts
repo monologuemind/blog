@@ -29,6 +29,6 @@ type MarkedExtension = ArrayElement<
 	ArgumentTypes<typeof import('marked').marked.use>['0']['extensions']
 >;
 
-type Article = { name: string; pathname: string; description: string; topics: string[] };
+type Article = { title: string; pathname: string; description: string; topics: string[] };
 
 type Data = { articles?: Article[] };
