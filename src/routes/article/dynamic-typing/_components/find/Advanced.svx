@@ -30,14 +30,14 @@ const find = async <PartialParameters extends Parameters>({
   // Return type does have to be forced inside of the find function
   if (paginated) {
     return {
-      data: [{ name: 'Arya Start' }, { name: 'Jon Snow' }],
+      data: [{ name: 'Arya Stark' }, { name: 'Jon Snow' }],
       limit: 10,
       page: 0
     } as ResponseForFind<PartialParameters>;
   }
 
   // Return type does have to be forced inside of the find function
-  return [{ name: 'Arya Start' }, { name: 'Jon Snow' }] as ResponseForFind<PartialParameters>;
+  return [{ name: 'Arya Stark' }, { name: 'Jon Snow' }] as ResponseForFind<PartialParameters>;
 };
 
 // Types would now be known because we can type check based on the parameters passed to the function
