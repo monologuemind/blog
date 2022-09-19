@@ -1,0 +1,18 @@
+<script lang='ts'>
+  import global_data from '$stores/data';
+  import { base } from '$app/paths';
+
+  $: typescript_articles = $global_data.articles.filter(article => article.topics.includes('typescript'));
+</script>
+
+
+{#if typescript_articles.length}
+  {#each typescript_articles as article}
+    <a
+      class="link link-secondary link-hover"
+      href={`${base}/article/${article.pathname}`}>{article.title}</a
+    >
+  {/each}
+{:else}
+  <p>Oh no! We don't have any articles on this topic yet. Check back later to see if we've added any!</p>
+{/if}

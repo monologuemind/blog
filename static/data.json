@@ -1,12 +1,1 @@
-{
-	"articles": [
-		{
-			"name": "Typescript Dynamic Typing",
-			"pathname": "dynamic-typing",
-			"description": "Types that use types to make your life easier.",
-			"topics": [
-				"typescript"
-			]
-		}
-	]
-}
+{"articles":[{"title":"Typescript Dynamic Typing","description":"Types that use types to make your life easier.","topics":["typescript"],"pathname":"dynamic-typing"}]}
