@@ -1,13 +1,13 @@
-const i = [
-  "/blog/_app/immutable/start-bf20d5b7.js",
-  "/blog/_app/immutable/components/pages/_layout.svelte-958e816e.js",
+const m = [
+  "/blog/_app/immutable/start-30cea153.js",
+  "/blog/_app/immutable/components/pages/_layout.svelte-c94c0587.js",
   "/blog/_app/immutable/assets/_layout-d90cda35.css",
-  "/blog/_app/immutable/components/error.svelte-badcb46f.js",
+  "/blog/_app/immutable/components/error.svelte-784362fd.js",
   "/blog/_app/immutable/components/pages/article/_layout.svelte-3f67cf0a.js",
   "/blog/_app/immutable/assets/_layout-6d1fb0d3.css",
   "/blog/_app/immutable/components/pages/topics/_layout.svelte-0569bf24.js",
   "/blog/_app/immutable/components/pages/_page.svelte-8c7e19a3.js",
-  "/blog/_app/immutable/components/pages/article/dynamic-typing/_page.svelte-3c46f81a.js",
+  "/blog/_app/immutable/components/pages/article/dynamic-typing/_page.svelte-0f306e50.js",
   "/blog/_app/immutable/components/pages/article-list/_page.svelte-201fa7bc.js",
   "/blog/_app/immutable/components/pages/topics/_page.svelte-d835c003.js",
   "/blog/_app/immutable/modules/pages/_layout.ts-5fc52d5a.js",
@@ -16,7 +16,7 @@ const i = [
   "/blog/_app/immutable/modules/pages/article/dynamic-typing/_page.ts-472cd466.js",
   "/blog/_app/immutable/modules/pages/article-list/_page.ts-146aedd8.js",
   "/blog/_app/immutable/modules/pages/topics/_page.ts-e99dd96f.js",
-  "/blog/_app/immutable/chunks/singletons-be2f7d73.js",
+  "/blog/_app/immutable/chunks/singletons-deedb06a.js",
   "/blog/_app/immutable/chunks/paths-88cc51a0.js",
   "/blog/_app/immutable/chunks/index-372a785c.js",
   "/blog/_app/immutable/chunks/control-38b853d4.js",
@@ -31,16 +31,16 @@ const i = [
   "/blog/_app/immutable/chunks/_page-f2ab96f6.js",
   "/blog/_app/immutable/chunks/_page-0735bfdf.js",
   "/blog/_app/immutable/chunks/_page-2b8e8cae.js",
-  "/blog/_app/immutable/chunks/0-025d8d69.js",
-  "/blog/_app/immutable/chunks/1-a553fee8.js",
+  "/blog/_app/immutable/chunks/0-17d59589.js",
+  "/blog/_app/immutable/chunks/1-48f5a354.js",
   "/blog/_app/immutable/chunks/2-8c87d014.js",
   "/blog/_app/immutable/chunks/3-c3ecfb9a.js",
   "/blog/_app/immutable/chunks/4-9dca3afb.js",
   "/blog/_app/immutable/chunks/5-024f251c.js",
-  "/blog/_app/immutable/chunks/6-35702539.js",
+  "/blog/_app/immutable/chunks/6-97372c4c.js",
   "/blog/_app/immutable/chunks/7-d648e936.js",
   "/blog/_app/immutable/chunks/8-c9a67cba.js"
-], m = [
+], b = [
   "/blog/.nojekyll",
   "/blog/code.css",
   "/blog/data.json",
@@ -48,7 +48,7 @@ const i = [
   "/blog/favicon.png",
   "/blog/manifest.json",
   "/blog/robots.txt"
-], p = new Date().toDateString(), t = self, c = `cache${p}`, n = i.concat(m).filter((a) => !a.includes("jekyll")), u = new Set(n);
+], p = new Date().toDateString(), t = self, c = `cache${p}`, n = m.concat(b).filter((a) => !a.includes("jekyll")), u = new Set(n);
 t.addEventListener("install", (a) => {
   a.waitUntil(
     caches.open(c).then((e) => {
@@ -82,8 +82,8 @@ async function g(a) {
 t.addEventListener("fetch", (a) => {
   if (a.request.method !== "GET" || a.request.headers.has("range"))
     return;
-  const e = new URL(a.request.url), s = e.protocol.startsWith("http"), l = e.hostname === self.location.hostname && e.port !== self.location.port, o = e.host === self.location.host && u.has(e.pathname), b = a.request.cache === "only-if-cached" && !o;
-  s && !l && !b && a.respondWith(
+  const e = new URL(a.request.url), s = e.protocol.startsWith("http"), l = e.hostname === self.location.hostname && e.port !== self.location.port, o = e.host === self.location.host && u.has(e.pathname), i = a.request.cache === "only-if-cached" && !o;
+  s && !l && !i && a.respondWith(
     (async () => o && await caches.match(a.request) || g(a.request))()
   );
 });
