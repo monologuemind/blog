@@ -19,11 +19,11 @@ const find = async ({
 }): Promise<Person[] | PersonPaginated> => {
   // Return the paginated data if paginated is true
   if (paginated) {
-    return { data: [{ name: 'Arya Start' }, { name: 'Jon Snow' }], limit: 10, page: 0 };
+    return { data: [{ name: 'Arya Stark' }, { name: 'Jon Snow' }], limit: 10, page: 0 };
   }
 
   // Otherwise return the array of people
-  return [{ name: 'Arya Start' }, { name: 'Jon Snow' }]
+  return [{ name: 'Arya Stark' }, { name: 'Jon Snow' }]
 };
 
 const main = async () => {
