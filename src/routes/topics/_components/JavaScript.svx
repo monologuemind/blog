@@ -1,5 +1,6 @@
 <script lang='ts'>
   import global_data from '$stores/data';
+  import { base } from '$app/paths';
 
   $: javascript_articles = $global_data.articles.filter(article => article.topics.includes('javascript'));
 </script>
