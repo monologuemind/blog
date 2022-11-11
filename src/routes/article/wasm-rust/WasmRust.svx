@@ -1,0 +1,73 @@
+---
+  title: WASM with Rust
+  description: Writing Rust code and using it with JavaScript
+  topics: rust,javascript
+---
+
+<script lang='ts'>
+  import H1 from '$components/H1.svelte';
+  import PersonModal from './_components/PersonModal.svelte';
+
+  export let methods: { [key: string]: () => any };
+
+  const links = [
+    { link: 'https://docs.rs/wasm-bindgen/latest/wasm_bindgen', name: 'WASM Library', },
+    { link: 'https://serde.rs/', name: 'Serde Library (Using JSON in Rust)', },
+    { link: 'https://docs.rs/serde-wasm-bindgen/0.4.3/serde_wasm_bindgen/', name: 'Serde WASM Helpers', },
+  ];
+
+  interface Person {
+		name: String;
+		age: number;
+		_meta: String;
+	}
+
+  interface Object {
+    id: String;
+    [key: String] : any;
+  }
+
+  let people: Person[] = [];
+  let objects: Object[] = [];
+  let create_object = false;
+  let person = {};
+  let object = {};
+
+  const create_object_dialog = () => create_object = !create_object;
+</script>
+
+<H1>{title}</H1>
+
+Rust Keys
+<ol>
+  {#each Object.keys(methods) as method}
+    <li>{method}</li>
+  {/each}
+</ol>
+
+<div class="grid grid-cols-4">
+  <div class="btn">01</div>
+  <div class="btn col-span-2">02</div>
+  <div class="btn">03</div>
+  <div class="btn">04</div>
+  <div class="btn">05</div>
+  <div class="btn">06</div>
+  <div class="btn">07</div>
+  <div class="btn">08</div>
+  <div class="btn">09</div>
+</div>
+
+<PersonModal />
+
+<!-- <button style:width="50%" on:click={create_person_dialog} class="btn btn-ghost normal-case text-xl">Create Person</button> -->
+
+{#each people as person}
+  <p>{person.name}</p>
+{/each}
+
+Resources
+<ol>
+  {#each links as { link, name }, index}
+    <li><a target="_blank" class="link link-secondary link-hover" href={link}>{name}</a></li>
+  {/each}
+</ol>

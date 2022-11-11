@@ -17,6 +17,8 @@ declare interface Window {
 	page_state: import('svelte/store').Writable<{
 		[key: string]: Record<string, any>
 	}>;
+	// rust: Partial<import('./wasm/rust/pkg/rust').InitOutput>;
+	rust: any;
 }
 
 type ArgumentTypes<F extends Function> = F extends (...args: infer A) => any ? A : never;
