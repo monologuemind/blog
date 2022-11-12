@@ -6,7 +6,9 @@
 
 <script lang='ts'>
   import H1 from '$components/H1.svelte';
+  import H2 from '$components/H2.svelte';
   import PersonModal from './_components/PersonModal.svelte';
+  import PeopleTable from './_components/PeopleTable.svelte';
 
   export let methods: { [key: string]: () => any };
 
@@ -24,7 +26,7 @@
 
   interface Object {
     id: String;
-    [key: String] : any;
+    [key: String]: any;
   }
 
   let people: Person[] = [];
@@ -34,6 +36,15 @@
   let object = {};
 
   const create_object_dialog = () => create_object = !create_object;
+  const confirm = () => {
+    people = [...people, { ...person }];
+    person = {};
+  };
+  const cancel = () => {
+    person = {};
+  };
+
+  $: unique_people = methods?.unique_by ? methods.unique_by({ key: 'name', objects: [...people] }).map(map => Object.fromEntries(map)) : [];
 </script>
 
 <H1>{title}</H1>
@@ -45,25 +56,16 @@ Rust Keys
   {/each}
 </ol>
 
-<div class="grid grid-cols-4">
-  <div class="btn">01</div>
-  <div class="btn col-span-2">02</div>
-  <div class="btn">03</div>
-  <div class="btn">04</div>
-  <div class="btn">05</div>
-  <div class="btn">06</div>
-  <div class="btn">07</div>
-  <div class="btn">08</div>
-  <div class="btn">09</div>
-</div>
+<PersonModal handlers={[confirm, cancel]}>
+  <input bind:value={person.name} type="text" placeholder="Type here" class="input input-bordered input-secondary w-full max-w-xs" />
+  <input min="1" max="1997" bind:value={person.age} type="number" placeholder="Type here" class="input input-bordered input-secondary w-full max-w-xs" />
+</PersonModal>
 
-<PersonModal />
+<button on:click={() => { people = [...people, methods.get_instance_of_person()] }} class="btn btn-outline btn-primary">Add MonologueMind to people</button>
 
-<!-- <button style:width="50%" on:click={create_person_dialog} class="btn btn-ghost normal-case text-xl">Create Person</button> -->
+<PeopleTable title="All The People" {people} />
+<PeopleTable title="Unique People" people={unique_people} />
 
-{#each people as person}
-  <p>{person.name}</p>
-{/each}
 
 Resources
 <ol>

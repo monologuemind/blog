@@ -3,11 +3,17 @@
 	import * as rust from '../../../wasm/rust/pkg/rust';
 	import { onMount } from 'svelte';
 
-	onMount(() => {
-		rust.default();
+	let display = false;
+
+	onMount(async () => {
+		await rust.default();
 
 		window.rust = rust;
+
+		display = true;
 	});
 </script>
 
-<WasmRust methods={{ ...rust }} />
+{#if display}
+	<WasmRust methods={{ ...rust }} />
+{/if}
