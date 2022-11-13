@@ -5,12 +5,14 @@
 	"scripts": {
 		"dev": "node scripts/pre-build.js && NODE_ENV=development vite dev --host",
 		"build": "node scripts/pre-build.js && vite build && node scripts/post-build.js",
+		"dev:build": "node scripts/pre-build.js && NODE_ENV=development vite build && node scripts/post-build.js",
 		"preview": "vite preview --host",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"wasm:rust:build": "cd src/wasm/rust && wasm-pack build --target web && rm ./pkg/package.json && rm ./pkg/.gitignore"
 	},
 	"devDependencies": {
 		"@leveluptuts/svelte-side-menu": "^1.0.5",

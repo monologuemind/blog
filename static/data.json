@@ -1,1 +1,1 @@
-{"articles":[{"title":"Typescript Dynamic Typing","description":"Types that use types to make your life easier.","topics":["typescript"],"pathname":"dynamic-typing"}]}
+{"articles":[{"title":"Typescript Dynamic Typing","description":"Types that use types to make your life easier.","topics":["typescript"],"pathname":"dynamic-typing"},{"title":"WASM with Rust","description":"Writing Rust code and using it with JavaScript","topics":["rust","javascript"],"pathname":"wasm-rust"}]}

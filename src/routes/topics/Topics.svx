@@ -8,7 +8,7 @@
 <H1>Topics</H1>
 {#each ['JavaScript', 'TypeScript'] as topic}
   <Collapse>
-    <H2 slot='title'>{topic}</H2>
+    <H2 display='contents' slot='title'>{topic}</H2>
     <div slot='content'>
       <svelte:component this={Topics[topic]}/>
     </div>

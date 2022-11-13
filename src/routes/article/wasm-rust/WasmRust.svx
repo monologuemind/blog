@@ -1,0 +1,77 @@
+---
+  title: WASM with Rust
+  description: Writing Rust code and using it with JavaScript
+  topics: rust,javascript
+---
+
+<script lang='ts'>
+  import H1 from '$components/H1.svelte';
+  import H2 from '$components/H2.svelte';
+  import PersonModal from './_components/PersonModal.svelte';
+  import PeopleTable from './_components/PeopleTable.svelte';
+
+  export let methods: { [key: string]: () => any };
+
+  const links = [
+    { link: 'https://docs.rs/wasm-bindgen/latest/wasm_bindgen', name: 'WASM Library', },
+    { link: 'https://serde.rs/', name: 'Serde Library (Using JSON in Rust)', },
+    { link: 'https://docs.rs/serde-wasm-bindgen/0.4.3/serde_wasm_bindgen/', name: 'Serde WASM Helpers', },
+    { link: 'https://monologuemind.github.io/blog/rust.js', name: 'WASM Js file' },
+    { link: 'https://monologuemind.github.io/blog/rust_bg.wasm', name: 'WASM file' },
+    { link: 'https://monologuemind.github.io/blog/lib.rs', name: 'Rust source' },
+  ];
+
+  interface Person {
+		name: String;
+		age: number;
+		_meta: String;
+	}
+
+  interface Object {
+    id: String;
+    [key: String]: any;
+  }
+
+  let people: Person[] = [];
+  let objects: Object[] = [];
+  let create_object = false;
+  let person = {};
+  let object = {};
+
+  const create_object_dialog = () => create_object = !create_object;
+  const confirm = () => {
+    people = [...people, { ...person }];
+    person = {};
+  };
+  const cancel = () => {
+    person = {};
+  };
+
+  $: unique_people = methods?.unique_by ? methods.unique_by({ key: 'name', objects: [...people] }).map(map => Object.fromEntries(map)) : [];
+</script>
+
+<H1>{title}</H1>
+
+<p>I wanted to mess around with WASM a bit so read up on some things to get started and created some sample functions for people to play with. You can see all the functions available by looking at window.rust. The wasm file, js file, and the rust source code are also available.</p>
+
+<div style:display='flex'>
+<PersonModal handlers={[confirm, cancel]}>
+  <input bind:value={person.name} type="text" placeholder="Type here" class="input input-bordered input-secondary w-full max-w-xs" />
+  <input min="1" max="1997" bind:value={person.age} type="number" placeholder="Type here" class="input input-bordered input-secondary w-full max-w-xs" />
+</PersonModal>
+
+<div>
+  <button on:click={() => { people = [...people, methods.get_instance_of_person()] }} class="btn btn-sm btn-outline btn-primary">Add MonologueMind to people</button>
+</div>
+</div>
+
+<PeopleTable title="All The People" {people} />
+<PeopleTable title="Unique People" people={unique_people} />
+
+
+Resources
+<ol>
+  {#each links as { link, name }, index}
+    <li><a target="_blank" class="link link-secondary link-hover" href={link}>{name}</a></li>
+  {/each}
+</ol>

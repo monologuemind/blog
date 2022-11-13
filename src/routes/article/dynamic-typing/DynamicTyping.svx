@@ -46,17 +46,17 @@ const job2 = create_job({
 
 
 <Collapse>
-  <H2 slot='title'>Paginated Data</H2>
+  <H2 display='contents' slot='title'>Paginated Data</H2>
   <FindTabView slot='content' />
 </Collapse>
 
 <Collapse>
-  <H2 slot='title'>Creating Data</H2>
+  <H2 display='contents' slot='title'>Creating Data</H2>
   <CreateTabView slot='content' />
 </Collapse>
 
 <Collapse>
-  <H2 slot='title'>Function Parameters</H2>
+  <H2 display='contents' slot='title'>Function Parameters</H2>
   <FunctionTabView slot='content' />
 </Collapse>
 

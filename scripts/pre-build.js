@@ -7,6 +7,10 @@ const articleRoutes = readdirSync(rootArticleDir).filter(fileOrDir => !fileOrDir
 const articles = articleRoutes.reduce((acc, articleRoute) => {
   const svxFile = readdirSync(`${rootArticleDir}/${articleRoute}`).filter(file => file.endsWith('.svx'))?.[0];
 
+  if (!svxFile) {
+    return acc;
+  }
+
   const svxFileData = readFileSync(`${rootArticleDir}/${articleRoute}/${svxFile}`).toString();
 
   const inds = svxFileData.split('\n').reduce((acc2, value, index) => {
