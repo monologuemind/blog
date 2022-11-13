@@ -7,7 +7,6 @@
 
 	onMount(async () => {
 		await rust.default();
-
 		window.rust = rust;
 
 		display = true;

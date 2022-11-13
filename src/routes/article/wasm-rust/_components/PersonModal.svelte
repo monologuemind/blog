@@ -14,6 +14,5 @@
 	modal_open_text="Create Person"
 	modal_title="Create Person"
 >
-	<h1 class="text-5xl font-bold">This is an h1</h1>
 	<slot />
 </Modal>

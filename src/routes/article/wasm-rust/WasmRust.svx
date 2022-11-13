@@ -16,6 +16,9 @@
     { link: 'https://docs.rs/wasm-bindgen/latest/wasm_bindgen', name: 'WASM Library', },
     { link: 'https://serde.rs/', name: 'Serde Library (Using JSON in Rust)', },
     { link: 'https://docs.rs/serde-wasm-bindgen/0.4.3/serde_wasm_bindgen/', name: 'Serde WASM Helpers', },
+    { link: 'https://monologuemind.github.io/blog/rust.js', name: 'WASM Js file' },
+    { link: 'https://monologuemind.github.io/blog/rust_bg.wasm', name: 'WASM file' },
+    { link: 'https://monologuemind.github.io/blog/lib.rs', name: 'Rust source' },
   ];
 
   interface Person {
@@ -49,19 +52,18 @@
 
 <H1>{title}</H1>
 
-Rust Keys
-<ol>
-  {#each Object.keys(methods) as method}
-    <li>{method}</li>
-  {/each}
-</ol>
+<p>I wanted to mess around with WASM a bit so read up on some things to get started and created some sample functions for people to play with. You can see all the functions available by looking at window.rust. The wasm file, js file, and the rust source code are also available.</p>
 
+<div style:display='flex'>
 <PersonModal handlers={[confirm, cancel]}>
   <input bind:value={person.name} type="text" placeholder="Type here" class="input input-bordered input-secondary w-full max-w-xs" />
   <input min="1" max="1997" bind:value={person.age} type="number" placeholder="Type here" class="input input-bordered input-secondary w-full max-w-xs" />
 </PersonModal>
 
-<button on:click={() => { people = [...people, methods.get_instance_of_person()] }} class="btn btn-outline btn-primary">Add MonologueMind to people</button>
+<div>
+  <button on:click={() => { people = [...people, methods.get_instance_of_person()] }} class="btn btn-sm btn-outline btn-primary">Add MonologueMind to people</button>
+</div>
+</div>
 
 <PeopleTable title="All The People" {people} />
 <PeopleTable title="Unique People" people={unique_people} />
